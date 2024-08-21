@@ -7,7 +7,7 @@ function Parent(){
     return(
         <div>
             <section className='parent'>
-            <h1>Welcome to my First React Page</h1>
+            <h1>Welcome to my First React Page!</h1>
             <h6>My name is Don Henessy S. David</h6>
             </section>
             <Child1 />
