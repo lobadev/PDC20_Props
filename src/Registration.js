@@ -59,6 +59,7 @@ function Registration() {
       <header className='text-center mb-4'>
         <h1>Enrollment Form</h1>
         <h5>Created with ReactJS and Bootstrap</h5>
+        <p>Acknowledgments: Special thanks to ChatGPT for its assistance with Bootstrap in this project.</p>
       </header>
       <form onSubmit={handleSubmit}>
         <div className='row'>
@@ -217,6 +218,7 @@ function Registration() {
             <button type='button' className='btn btn-danger w-100 mt-2' onClick={handleReset}>
               Clear
             </button>
+            
           </div>
         </div>
 
