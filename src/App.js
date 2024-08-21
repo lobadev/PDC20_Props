@@ -6,6 +6,7 @@ import './App.css';
 import logo from './logo.svg';
 import Registration from './Registration';
 
+
 function Parent() {
     return (
         // <div className="app-container">

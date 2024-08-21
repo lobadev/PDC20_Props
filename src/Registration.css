@@ -24,6 +24,8 @@
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left;
+    color: #a8a8a8;
   }
   
   .registration-form input {
