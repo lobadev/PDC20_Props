@@ -6,6 +6,8 @@ import GreetHello from './Greetings/GreetHello';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './Conditionals/Homepage';
 import LogAdmin from './Dashboard/LogAdmin';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
