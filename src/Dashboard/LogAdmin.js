@@ -2,15 +2,41 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap
 import AdminPanel from "./AdminPanel";
 
+import { useNavigate} from 'react-router-dom';
+
 function LogAdmin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [accountType, setAccountType] = useState('user'); // Default to 'user'
   const [user, setUser] = useState(null);
 
+  const [loginAttempts, setLoginAttempts] = useState(0);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const navigate = useNavigate();
+
   const handleLogin = () => {
+    const validAdminCredentials = {
+      username:'user123',
+      password:'pass123'
+    };
+
     const isAdmin = accountType === 'admin';
-    setUser({ name: username, isAdmin });
+
+    if(isAdmin && (username === validAdminCredentials.username && password === validAdminCredentials.password)){
+      setUser({ name: username, isAdmin });
+    } else if(!isAdmin && (username === validAdminCredentials.username && password === validAdminCredentials.password)){
+      setUser({ name: username, isAdmin:false });
+    } else{
+      setLoginAttempts(prevAttempts => prevAttempts +1);
+      setErrorMessage('Mali account mo');
+
+      if(loginAttempts +1 >= 3) {
+        navigate('');
+      }
+    }
+
+  
   };
 
   return (
