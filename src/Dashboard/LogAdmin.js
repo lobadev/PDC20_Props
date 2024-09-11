@@ -32,7 +32,7 @@ function LogAdmin() {
       setErrorMessage('Mali account mo');
 
       if(loginAttempts +1 >= 3) {
-        navigate('');
+        navigate('/auth-error');
       }
     }
 
@@ -83,6 +83,12 @@ function LogAdmin() {
               <button type="button" className="btn btn-primary" onClick={handleLogin}>
                 Login
               </button>
+              
+              {errorMessage && <p style={{color:'red'}}>{errorMessage}</p>}
+              {loginAttempts > 0 &&
+                <p styles={{color:'red'}}> Login Attempts</p>
+              }
+
             </div>
           </form>
         </div>
